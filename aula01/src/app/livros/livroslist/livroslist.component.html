@@ -1,0 +1,18 @@
+<table class="table caption-top">
+    <caption style="font-size: 42px;">Lista de Livros</caption>
+        <thead>
+              <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col"><button routerLink="/admin/livros/novo" >Novo</button></th>
+                  </tr>
+            </thead>
+        <tbody>
+              <tr *ngFor="let livro of lista">
+
+                    <td>{{livro.nome}}</td>
+                    <td>{{livro.autor}}</td>
+        </tr>
+           
+    </tbody>
+</table>

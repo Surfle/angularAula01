@@ -1,0 +1,18 @@
+<table class="table caption-top">
+    <caption style="font-size: 42px;">Lista de Carros</caption>
+        <thead>
+              <tr>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col"><button routerLink="/admin/carros/novo" >Novo</button></th>
+                  </tr>
+            </thead>
+        <tbody>
+              <tr *ngFor="let carro of lista">
+
+                    <td>{{carro.marca}}</td>
+                    <td>{{carro.modelo}}</td>
+        </tr>
+           
+    </tbody>
+</table>
