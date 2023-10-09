@@ -4,8 +4,8 @@
               <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Autor</th>
-                    <th scope="col"><button routerLink="/admin/livros/novo" >Novo</button></th>
-                  </tr>
+                    <th scope="col"><button (click)="abrirModal(abc)" >Novo Livro</button></th>
+              </tr>
             </thead>
         <tbody>
               <tr *ngFor="let livro of lista">
@@ -16,3 +16,18 @@
            
     </tbody>
 </table>
+
+<ng-template #abc let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Novo Livro</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+        <app-livrosdetails (retorno)="addNaLista($event)" ></app-livrosdetails>
+            
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>

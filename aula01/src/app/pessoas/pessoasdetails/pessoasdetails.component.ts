@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Pessoa } from '../pessoaslist/pessoa';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,8 +13,13 @@ export class PessoasdetailsComponent {
 
   roteador = inject(ActivatedRoute);
 
+  @Output() retorno = new EventEmitter<Pessoa>();
+
+
   constructor(){
     let id = this.roteador.snapshot.paramMap.get('id');
-    console.log(id);
+  }
+  salvar(){
+    this.retorno.emit(this.pessoa);
   }
 }

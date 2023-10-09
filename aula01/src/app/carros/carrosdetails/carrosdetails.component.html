@@ -1,7 +1,7 @@
-Nome:
+Marca:
 <input [(ngModel)]="carro.marca" type="text">
 
-Idade:
+Modelo:
 <input [(ngModel)]="carro.modelo" type="text">
 
-<button routerLink="admin/carros">Adicionar</button>
+<button (click)="salvar()">Salvar</button>

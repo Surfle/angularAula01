@@ -1,7 +1,7 @@
 Nome:
 <input [(ngModel)]="livro.nome" type="text">
 
-Idade:
-<input [(ngModel)]="livro.autor" type="number">
+Autor:
+<input [(ngModel)]="livro.autor" type="text">
 
-<button routerLink="admin/livros">Adicionar</button>
+<button (click)="salvar()">Salvar</button>
